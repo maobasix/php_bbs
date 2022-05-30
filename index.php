@@ -53,7 +53,7 @@
         <!-- 话题的结构（布局） -->
         <?php
             include 'conn.php';
-            $sql="select * from chat order by pubtime desc";
+            $sql="select c.*, u.nickname from chat c, users u where c.uid = u.uid order by pubtime desc";
             $rs=$conn->query($sql);
             while($row=$rs->fetch_assoc()){
                 echo $row['title'];
@@ -61,7 +61,7 @@
         <div class="chatbox">
             <div class='face'></div>
             <div>
-                <h4><?php echo $row['uid']?></h4>
+                <h4><?php echo $row['nickname']?></h4>
                 <span><?php echo $row['pubtime']?></span>
             </div>
 

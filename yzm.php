@@ -22,7 +22,7 @@ for($i=0; $i<4; $i++){
     $text .= substr($str, rand(0, strlen($str)-1) ,1);
 }
 // imagestring($img, 5, 10, 10, $text, $color_text);
-imagettftext($img, 20, 0, 5, 30, $color_text,'VarelaRound-Regular.ttf',$text);
+imagettftext($img, 20, 0, 5, 30, $color_text,'C:\Users\maobasix\Desktop\PHPstudy\kj\bbs\VarelaRound-Regular.ttf',$text);
 // 把验证码存储在服务器"缓存"中，以便登录比对
 $_SESSION['vcode'] = $text;
 
